@@ -1,0 +1,84 @@
+{
+  "tests": [
+    {
+      "name": "test successfully builds",
+      "setup": "./configure",
+      "run": "make",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 40
+    },
+    {
+      "name": "test ListTests",
+      "setup": "make",
+      "run": "./test --list-test-names-only [ListTests] | grep . && ./test [ListTests]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "test task1sumIterative",
+      "setup": "make",
+      "run": "./test --list-test-names-only [task1sumIterative] | grep . && ./test [task1sumIterative]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "test task2sumRecursive",
+      "setup": "make",
+      "run": "./test --list-test-names-only [task2sumRecursive] | grep . && ./test [task2sumRecursive]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "test task3reverseIterative",
+      "setup": "make",
+      "run": "./test --list-test-names-only [task3reverseIterative] | grep . && ./test [task3reverseIterative]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "test task4reverseRecursive",
+      "setup": "make",
+      "run": "./test --list-test-names-only [task4reverseRecursive] | grep . && ./test [task4reverseRecursive]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "test task5isPalindromeIterative",
+      "setup": "make",
+      "run": "./test --list-test-names-only [task5isPalindromeIterative] | grep . && ./test [task5isPalindromeIterative]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "test task6isPalindromeRecursive",
+      "setup": "make",
+      "run": "./test --list-test-names-only [task6isPalindromeRecursive] | grep . && ./test [task6isPalindromeRecursive]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
