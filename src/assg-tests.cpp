@@ -164,6 +164,7 @@ TEST_CASE("<List> test of List user defined type for this assignment",
 
 /** Task 1: implement a sublist copy constructor for the List class.
  */
+/*
 TEST_CASE("<List constructor> test of new sublist copy constructor",
           "[task1sublistCopyConstructor]")
 {
@@ -241,10 +242,12 @@ TEST_CASE("<List constructor> test of new sublist copy constructor",
   CHECK_THROWS_AS( List(l1, 0, -1), ListMemoryBoundsException );
   CHECK_THROWS_AS( List(l1, 0, 5), ListMemoryBoundsException );
 }
+*/
 
 
 /** Task 2: implement merge member function
  */
+/*
 TEST_CASE("<List> implement merge member function",
           "[task2mergeMemberFunction]")
 {
@@ -411,10 +414,12 @@ TEST_CASE("<List> implement merge member function",
     CHECK( r3.str() == "<list> size: 15 [ agent smith, apoc, cypher, dozer, dozer, dujour, morpheus, mouse, neo, spoon boy, switch, , , ,  ]" );
   }  
 }
+*/
 
 
 /** Task 3: implement the recursive sort member function
  */
+/*
 TEST_CASE("<List> implement sort member function",
           "[task3sortMemberFunction]")
 {
@@ -526,10 +531,12 @@ TEST_CASE("<List> implement sort member function",
     CHECK( l5.str() == "<list> size: 20 [ agent smith, apoc, architect, cypher, dozer, dujour, kali, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, seraph, spoon boy, switch, tank, trinity ]" );
   }
 }
+*/
 
 
 /** Task 4: implement the recursive search member function
  */
+/*
 TEST_CASE("<List> implement search member function",
           "[task4searchMemberFunction]")
 {
@@ -589,10 +596,12 @@ TEST_CASE("<List> implement search member function",
     CHECK( result == NOT_FOUND );
   }  
 }
+*/
 
 
 /** Task 5: implement the isSorted() member function
  */
+/*
 TEST_CASE("<List> implement isSorted member function",
           "[task5isSortedMemberFunction]")
 {
@@ -642,10 +651,12 @@ TEST_CASE("<List> implement isSorted member function",
     CHECK( l1.isSorted() );
   }  
 }
+*/
 
 
 /** Task 5: implement public/private search API
  */
+/*
 TEST_CASE("<List> implement public/private search member function",
           "[task5searchAPIChanges]")
 {
@@ -701,4 +712,4 @@ TEST_CASE("<List> implement public/private search member function",
     CHECK( result == NOT_FOUND );
   }  
 }
-
+*/

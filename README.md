@@ -130,7 +130,7 @@ are going to add yet another constructor to our `List` data type, but
 one which will make a new list that is a copy of a portion of another
 list.  So for this task, you need to add a new `List` constructor that
 is the same as the copy constructor, but add in two additional
-parameters, a begin index and an end index (both integers).  These
+parameters, a `begin` index and an `end` index (both integers).  These
 will indicate the portion of the passed in list that should be copied
 into the newly created list.  Your implementation of the copy
 constructor will then be similar to the existing one, but you should
@@ -376,10 +376,6 @@ only, it does not modify the `List` when called.
 
 Implement this method and get it to pass the next set of unit tests after uncommenting
 them in the test file.
-
-
-
-
 
 
 # Assignment Submission

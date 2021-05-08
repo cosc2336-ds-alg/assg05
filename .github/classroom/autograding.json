@@ -21,9 +21,9 @@
       "points": 0
     },
     {
-      "name": "test task1sumIterative",
+      "name": "test task1sublistCopyConstructor",
       "setup": "make",
-      "run": "./test --list-test-names-only [task1sumIterative] | grep . && ./test [task1sumIterative]",
+      "run": "./test --list-test-names-only [task1sublistCopyConstructor] | grep . && ./test [task1sublistCopyConstructor]",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -31,9 +31,9 @@
       "points": 10
     },
     {
-      "name": "test task2sumRecursive",
+      "name": "test task2mergeMemberFunction",
       "setup": "make",
-      "run": "./test --list-test-names-only [task2sumRecursive] | grep . && ./test [task2sumRecursive]",
+      "run": "./test --list-test-names-only [task2mergeMemberFunction] | grep . && ./test [task2mergeMemberFunction]",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -41,9 +41,9 @@
       "points": 10
     },
     {
-      "name": "test task3reverseIterative",
+      "name": "test task3sortMemberFunction",
       "setup": "make",
-      "run": "./test --list-test-names-only [task3reverseIterative] | grep . && ./test [task3reverseIterative]",
+      "run": "./test --list-test-names-only [task3sortMemberFunction] | grep . && ./test [task3sortMemberFunction]",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -51,9 +51,9 @@
       "points": 10
     },
     {
-      "name": "test task4reverseRecursive",
+      "name": "test task4searchMemberFunction",
       "setup": "make",
-      "run": "./test --list-test-names-only [task4reverseRecursive] | grep . && ./test [task4reverseRecursive]",
+      "run": "./test --list-test-names-only [task4searchMemberFunction] | grep . && ./test [task4searchMemberFunction]",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -61,9 +61,9 @@
       "points": 10
     },
     {
-      "name": "test task5isPalindromeIterative",
+      "name": "test task5isSortedMemberFunction",
       "setup": "make",
-      "run": "./test --list-test-names-only [task5isPalindromeIterative] | grep . && ./test [task5isPalindromeIterative]",
+      "run": "./test --list-test-names-only [task5isSortedMemberFunction] | grep . && ./test [task5isSortedMemberFunction]",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -71,9 +71,9 @@
       "points": 10
     },
     {
-      "name": "test task6isPalindromeRecursive",
+      "name": "test task5searchAPIChanges",
       "setup": "make",
-      "run": "./test --list-test-names-only [task6isPalindromeRecursive] | grep . && ./test [task6isPalindromeRecursive]",
+      "run": "./test --list-test-names-only [task5searchAPIChanges] | grep . && ./test [task5searchAPIChanges]",
       "input": "",
       "output": "",
       "comparison": "included",
