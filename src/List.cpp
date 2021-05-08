@@ -268,9 +268,6 @@ ostream& operator<<(ostream& out, const List& rhs)
  * List  class.
  *
  * @param message The exception message thrown when an error occurs.
- * @param size The current size of the List that was indexed.
- * @param begin The begin index value that was attempted on the list.
- * @param end The end index value that was attempted on the list.
  */
 ListMemoryBoundsException::ListMemoryBoundsException(const string& message)
 {

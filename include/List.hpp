@@ -52,7 +52,7 @@ public:
   // accessor methods declarations go here
   int getSize() const;
   string str() const;
-  
+
   // overloaded operators
   string& operator[](int index);
   bool operator==(const List& rhs) const;

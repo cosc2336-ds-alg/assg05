@@ -165,94 +165,94 @@ TEST_CASE("<List> test of List user defined type for this assignment",
 /** Task 1: implement a sublist copy constructor for the List class.
  */
 /*
-TEST_CASE("<List constructor> test of new sublist copy constructor",
+   TEST_CASE("<List constructor> test of new sublist copy constructor",
           "[task1sublistCopyConstructor]")
-{
-  string values1[] = {"neo", "morpheus", "trinity", "cypher", "oracle"};
-  List l1(5, values1);
+   {
+   string values1[] = {"neo", "morpheus", "trinity", "cypher", "oracle"};
+   List l1(5, values1);
 
-  // copy from beginning of list
-  List l2 = List(l1, 0, 2);
-  CHECK( l1.getSize() == 5 );
-  CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
-  CHECK( l2.getSize() == 3 );
-  CHECK( l2.str() ==  "<list> size: 3 [ neo, morpheus, trinity ]" );
+   // copy from beginning of list
+   List l2 = List(l1, 0, 2);
+   CHECK( l1.getSize() == 5 );
+   CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
+   CHECK( l2.getSize() == 3 );
+   CHECK( l2.str() ==  "<list> size: 3 [ neo, morpheus, trinity ]" );
 
 
-  // copy to end of list
-  List l3 = List(l1, 2, 4);
-  CHECK( l1.getSize() == 5 );
-  CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
-  CHECK( l3.getSize() == 3 );
-  CHECK( l3.str() ==  "<list> size: 3 [ trinity, cypher, oracle ]" );
+   // copy to end of list
+   List l3 = List(l1, 2, 4);
+   CHECK( l1.getSize() == 5 );
+   CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
+   CHECK( l3.getSize() == 3 );
+   CHECK( l3.str() ==  "<list> size: 3 [ trinity, cypher, oracle ]" );
 
-  // copy middle values out of list
-  List l4 = List(l1, 1, 3);
-  CHECK( l1.getSize() == 5 );
-  CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
-  CHECK( l4.getSize() == 3 );
-  CHECK( l4.str() ==  "<list> size: 3 [ morpheus, trinity, cypher ]" );
+   // copy middle values out of list
+   List l4 = List(l1, 1, 3);
+   CHECK( l1.getSize() == 5 );
+   CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
+   CHECK( l4.getSize() == 3 );
+   CHECK( l4.str() ==  "<list> size: 3 [ morpheus, trinity, cypher ]" );
 
-  // copy only first value of list
-  List l5 = List(l1, 0, 0);
-  CHECK( l1.getSize() == 5 );
-  CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
-  CHECK( l5.getSize() == 1 );
-  CHECK( l5.str() ==  "<list> size: 1 [ neo ]" );
-  
-  // copy only last value of list
-  List l6 = List(l1, 4, 4);
-  CHECK( l1.getSize() == 5 );
-  CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
-  CHECK( l6.getSize() == 1 );
-  CHECK( l6.str() ==  "<list> size: 1 [ oracle ]" );
-  
-  // copy a middle value
-  List l7 = List(l1, 2, 2);
-  CHECK( l1.getSize() == 5 );
-  CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
-  CHECK( l7.getSize() == 1 );
-  CHECK( l7.str() ==  "<list> size: 1 [ trinity ]" );
-  
-  // it should be possible to create an empty list with the sublist constructor
-  List l8 = List(l1, 1, 0);
-  CHECK( l1.getSize() == 5 );
-  CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
-  CHECK( l8.getSize() == 0 );
-  CHECK( l8.str() ==  "<list> size: 0 [ ]" );
+   // copy only first value of list
+   List l5 = List(l1, 0, 0);
+   CHECK( l1.getSize() == 5 );
+   CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
+   CHECK( l5.getSize() == 1 );
+   CHECK( l5.str() ==  "<list> size: 1 [ neo ]" );
 
-  // this should be equal to a default empty list
-  List l0;
-  CHECK( l8 == l0 );
+   // copy only last value of list
+   List l6 = List(l1, 4, 4);
+   CHECK( l1.getSize() == 5 );
+   CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
+   CHECK( l6.getSize() == 1 );
+   CHECK( l6.str() ==  "<list> size: 1 [ oracle ]" );
 
-  // another empty sublist
-  List l9 = List(l1, 4, 3);
-  CHECK( l1.getSize() == 5 );
-  CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
-  CHECK( l9.getSize() == 0 );
-  CHECK( l9.str() ==  "<list> size: 0 [ ]" );
-  CHECK( l9 == l0 );
+   // copy a middle value
+   List l7 = List(l1, 2, 2);
+   CHECK( l1.getSize() == 5 );
+   CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
+   CHECK( l7.getSize() == 1 );
+   CHECK( l7.str() ==  "<list> size: 1 [ trinity ]" );
 
-  // finally this was not mentioned in assignment description, but
-  // you need to add in check that illegal bounds are not being
-  // attempted and throw a ListMemoryBoundsException.  You can see
-  // the operator[] for an example of how this is done
-  CHECK_THROWS_AS( List(l1, -1, 4), ListMemoryBoundsException );
-  CHECK_THROWS_AS( List(l1, 5, 4), ListMemoryBoundsException );
-  CHECK_THROWS_AS( List(l1, 0, -1), ListMemoryBoundsException );
-  CHECK_THROWS_AS( List(l1, 0, 5), ListMemoryBoundsException );
-}
-*/
+   // it should be possible to create an empty list with the sublist constructor
+   List l8 = List(l1, 1, 0);
+   CHECK( l1.getSize() == 5 );
+   CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
+   CHECK( l8.getSize() == 0 );
+   CHECK( l8.str() ==  "<list> size: 0 [ ]" );
+
+   // this should be equal to a default empty list
+   List l0;
+   CHECK( l8 == l0 );
+
+   // another empty sublist
+   List l9 = List(l1, 4, 3);
+   CHECK( l1.getSize() == 5 );
+   CHECK( l1.str() ==  "<list> size: 5 [ neo, morpheus, trinity, cypher, oracle ]" );
+   CHECK( l9.getSize() == 0 );
+   CHECK( l9.str() ==  "<list> size: 0 [ ]" );
+   CHECK( l9 == l0 );
+
+   // finally this was not mentioned in assignment description, but
+   // you need to add in check that illegal bounds are not being
+   // attempted and throw a ListMemoryBoundsException.  You can see
+   // the operator[] for an example of how this is done
+   CHECK_THROWS_AS( List(l1, -1, 4), ListMemoryBoundsException );
+   CHECK_THROWS_AS( List(l1, 5, 4), ListMemoryBoundsException );
+   CHECK_THROWS_AS( List(l1, 0, -1), ListMemoryBoundsException );
+   CHECK_THROWS_AS( List(l1, 0, 5), ListMemoryBoundsException );
+   }
+ */
 
 
 /** Task 2: implement merge member function
  */
 /*
-TEST_CASE("<List> implement merge member function",
+   TEST_CASE("<List> implement merge member function",
           "[task2mergeMemberFunction]")
-{
-  SECTION("test merge order lower, upper, lower, upper")
-  {
+   {
+   SECTION("test merge order lower, upper, lower, upper")
+   {
     string lowerValues[] = {"cypher", "neo"};
     List lower(2, lowerValues);
 
@@ -263,10 +263,10 @@ TEST_CASE("<List> implement merge member function",
 
     result.merge(lower, upper);
     CHECK( result.str() == "<list> size: 4 [ cypher, morpheus, neo, trinity ]" );
-  }
+   }
 
-  SECTION("test merge order upper, lower, upper, lower")
-  {
+   SECTION("test merge order upper, lower, upper, lower")
+   {
     string lowerValues[] = {"morpheus", "trinity"};
     List lower(2, lowerValues);
 
@@ -277,11 +277,11 @@ TEST_CASE("<List> implement merge member function",
 
     result.merge(lower, upper);
     CHECK( result.str() == "<list> size: 4 [ cypher, morpheus, neo, trinity ]" );
-  }
+   }
 
-    
-  SECTION("test merge order lower, upper, upper, lower")
-  {
+
+   SECTION("test merge order lower, upper, upper, lower")
+   {
     string lowerValues[] = {"cypher", "trinity"};
     List lower(2, lowerValues);
 
@@ -292,10 +292,10 @@ TEST_CASE("<List> implement merge member function",
 
     result.merge(lower, upper);
     CHECK( result.str() == "<list> size: 4 [ cypher, morpheus, neo, trinity ]" );
-  }
+   }
 
-  SECTION("test merge order upper, lower, lower, upper")
-  {
+   SECTION("test merge order upper, lower, lower, upper")
+   {
     string lowerValues[] = {"morpheus", "neo"};
     List lower(2, lowerValues);
 
@@ -306,10 +306,10 @@ TEST_CASE("<List> implement merge member function",
 
     result.merge(lower, upper);
     CHECK( result.str() == "<list> size: 4 [ cypher, morpheus, neo, trinity ]" );
-  }
+   }
 
-  SECTION("test merge order lower, lower, upper, upper")
-  {
+   SECTION("test merge order lower, lower, upper, upper")
+   {
     string lowerValues[] = {"cypher", "morpheus"};
     List lower(2, lowerValues);
 
@@ -320,10 +320,10 @@ TEST_CASE("<List> implement merge member function",
 
     result.merge(lower, upper);
     CHECK( result.str() == "<list> size: 4 [ cypher, morpheus, neo, trinity ]" );
-  }
+   }
 
-  SECTION("test merge order upper, upper, lower, lower")
-  {
+   SECTION("test merge order upper, upper, lower, lower")
+   {
     string lowerValues[] = {"neo", "trinity"};
     List lower(2, lowerValues);
 
@@ -334,11 +334,11 @@ TEST_CASE("<List> implement merge member function",
 
     result.merge(lower, upper);
     CHECK( result.str() == "<list> size: 4 [ cypher, morpheus, neo, trinity ]" );
-  }
+   }
 
 
-  SECTION("test merge with empty list")
-  {
+   SECTION("test merge with empty list")
+   {
     string lowerValues[] = {"cypher", "morpheus", "neo", "trinity"};
     List lower(4, lowerValues);
 
@@ -358,10 +358,10 @@ TEST_CASE("<List> implement merge member function",
     List result3;
     result3.merge(upper, otherEmpty);
     CHECK( result3.str() == "<list> size: 0 [ ]" );
-  }
+   }
 
-  SECTION("test some more general mixed merges")
-  {
+   SECTION("test some more general mixed merges")
+   {
     string i1Values[] = {"agent smith", "dozer", "dujour", "morpheus", "neo", "spoon boy"};
     List i1(6, i1Values);
 
@@ -377,25 +377,25 @@ TEST_CASE("<List> implement merge member function",
     List r1(11);
     r1.merge(i1, i2);
     CHECK( r1.str() == "<list> size: 11 [ agent smith, apoc, cypher, dozer, dozer, dujour, morpheus, mouse, neo, spoon boy, switch ]" );
-    
+
     List r2(10);
     r2.merge(i3, i2);
     CHECK( r2.str() == "<list> size: 10 [ apoc, cypher, dozer, mouse, neo, oracle, switch, tank, trinity, woman in red ]" );
-    
+
     List r3(13);
     r3.merge(i3, i4);
     CHECK( r3.str() == "<list> size: 13 [ agent brown, architect, cypher, keymaker, merovingian, morpheus, neo, oracle, persophene, tank, trinity, trinity, woman in red ]" );
-    
+
     List r4(24);
     r4.merge(r3, r1);
     CHECK( r4.str() == "<list> size: 24 [ agent brown, agent smith, apoc, architect, cypher, cypher, dozer, dozer, dujour, keymaker, merovingian, morpheus, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, trinity, woman in red ]" );
-  }
+   }
 
-  // You need to make sure for now that the destination of the merge is large enough
-  // to hold the two merged input lists.  If there is not enough space you should
-  // be throwing an exception
-  SECTION("test some more general mixed merges")
-  {
+   // You need to make sure for now that the destination of the merge is large enough
+   // to hold the two merged input lists.  If there is not enough space you should
+   // be throwing an exception
+   SECTION("test some more general mixed merges")
+   {
     string i1Values[] = {"agent smith", "dozer", "dujour", "morpheus", "neo", "spoon boy"};
     List i1(6, i1Values);
 
@@ -404,7 +404,7 @@ TEST_CASE("<List> implement merge member function",
 
     List r1(1); // way too small
     CHECK_THROWS_AS( r1.merge(i1, i2), ListMemoryBoundsException );
-    
+
     List r2(10); // just a bit too small
     CHECK_THROWS_AS( r2.merge(i1, i2), ListMemoryBoundsException );
 
@@ -412,19 +412,19 @@ TEST_CASE("<List> implement merge member function",
     List r3(15); // just a bit too small
     r3.merge(i1, i2);
     CHECK( r3.str() == "<list> size: 15 [ agent smith, apoc, cypher, dozer, dozer, dujour, morpheus, mouse, neo, spoon boy, switch, , , ,  ]" );
-  }  
-}
-*/
+   }
+   }
+ */
 
 
 /** Task 3: implement the recursive sort member function
  */
 /*
-TEST_CASE("<List> implement sort member function",
+   TEST_CASE("<List> implement sort member function",
           "[task3sortMemberFunction]")
-{
-  SECTION("test base case sorts")
-  {
+   {
+   SECTION("test base case sorts")
+   {
     // empty list should sort fine and still be empty
     List l1;
     l1.sort();
@@ -435,10 +435,10 @@ TEST_CASE("<List> implement sort member function",
     List l2(1, l2Values);
     l2.sort();
     CHECK( l2.str() == "<list> size: 1 [ neo ]" );
-  }
+   }
 
-  SECTION("test size 2 list which is even sized, both unsorted and already sorted")
-  {
+   SECTION("test size 2 list which is even sized, both unsorted and already sorted")
+   {
     // unsorted
     string l1Values[] = { "trin", "neo" };
     List l1(2, l1Values);
@@ -450,10 +450,10 @@ TEST_CASE("<List> implement sort member function",
     List l2(2, l2Values);
     l2.sort();
     CHECK( l1.str() == "<list> size: 2 [ neo, trin ]" );
-  }  
+   }
 
-  SECTION("test size 3 list which is odd sized")
-  {
+   SECTION("test size 3 list which is odd sized")
+   {
     string l1Values[] = { "trin", "morpheus", "neo" };
     List l1(3, l1Values);
     l1.sort();
@@ -475,10 +475,10 @@ TEST_CASE("<List> implement sort member function",
     List l4(3, l4Values);
     l4.sort();
     CHECK( l4.str() == "<list> size: 3 [ morpheus, neo, trin ]" );
-  }
+   }
 
-  SECTION("test some general bigger lists")
-  {
+   SECTION("test some general bigger lists")
+   {
     // even sized
     string l1Values[] = {"persophene", "trinity", "keymaker", "merovingian", "agent brown", "morpheus", "architect", "cypher"};
     List l1(8, l1Values);
@@ -490,7 +490,7 @@ TEST_CASE("<List> implement sort member function",
     List l2(11, l2Values);
     l2.sort();
     CHECK( l2.str() == "<list> size: 11 [ agent brown, agent smith, architect, cypher, keymaker, merovingian, morpheus, neo, oracle, persophene, trinity ]" );
-    
+
     // bigger reversed list even sized
     string l3Values[] = { "woman in red", "trinity", "tank", "persophene", "oracle", "neo", "mouse", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "apoc", "agent smith", "agent brown"};
     List l3(16, l3Values);
@@ -501,10 +501,10 @@ TEST_CASE("<List> implement sort member function",
     List l4(20, l4Values);
     l4.sort();
     CHECK( l4.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
-  }
+   }
 
-  SECTION("test some more lists where we use List features")
-  {
+   SECTION("test some more lists where we use List features")
+   {
     // sort a list of values
     string l4Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"};
     List l4(20, l4Values);
@@ -529,26 +529,26 @@ TEST_CASE("<List> implement sort member function",
     l5.sort();
     CHECK_FALSE( l4 == l5 );
     CHECK( l5.str() == "<list> size: 20 [ agent smith, apoc, architect, cypher, dozer, dujour, kali, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, seraph, spoon boy, switch, tank, trinity ]" );
-  }
-}
-*/
+   }
+   }
+ */
 
 
 /** Task 4: implement the recursive search member function
  */
 /*
-TEST_CASE("<List> implement search member function",
+   TEST_CASE("<List> implement search member function",
           "[task4searchMemberFunction]")
-{
-  SECTION("test base case search, search empty list should fail")
-  {
+   {
+   SECTION("test base case search, search empty list should fail")
+   {
     List l0; // empty list
     int result = l0.search("trinity", 1, 0);
     CHECK( result == NOT_FOUND );
-  }
+   }
 
-  SECTION("test some general cases on list of 20 values")
-  {
+   SECTION("test some general cases on list of 20 values")
+   {
     string l1Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"};
     List l1(20, l1Values);
 
@@ -581,12 +581,12 @@ TEST_CASE("<List> implement search member function",
     // is found will depend on its position
     result = l1.search("neo", 0, 19);
     CHECK( result == 11 );
-    
+
     // can only do this with version that exposes begin and end, this should end up
     // finding duplicate at index 12 instead
     result = l1.search("neo", 1, 19);
     CHECK( result == 12 );
-    
+
     // test failing searches
     result = l1.search("ghost", 0, 19);
     CHECK( result == NOT_FOUND );
@@ -594,19 +594,19 @@ TEST_CASE("<List> implement search member function",
     CHECK( result == NOT_FOUND );
     result = l1.search("noe", 0, 19);
     CHECK( result == NOT_FOUND );
-  }  
-}
-*/
+   }
+   }
+ */
 
 
 /** Task 5: implement the isSorted() member function
  */
 /*
-TEST_CASE("<List> implement isSorted member function",
+   TEST_CASE("<List> implement isSorted member function",
           "[task5isSortedMemberFunction]")
-{
-  SECTION("test list of size 0 and 1")
-  {
+   {
+   SECTION("test list of size 0 and 1")
+   {
     // list of size 0, or empty list is sorted
     List l0;
     CHECK( l0.isSorted() );
@@ -619,19 +619,19 @@ TEST_CASE("<List> implement isSorted member function",
 
     l1[0] = "morpheus";
     CHECK( l1.isSorted() );
-  }
+   }
 
-  SECTION("test specifically for bounds errors when checking last pair of values")
-  {
+   SECTION("test specifically for bounds errors when checking last pair of values")
+   {
     // create a list that is sorted except last pair, but
     // only use all but last value in creation
     string l1Values[] = { "agent smith", "morpheus", "neo", "oracle", "trinity"};
     List l1(4, l1Values);
     CHECK( l1.isSorted() );
-  }
+   }
 
-  SECTION("test in general sorted detection")
-  {
+   SECTION("test in general sorted detection")
+   {
     // not sorted
     string l1Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"};
     List l1(20, l1Values);
@@ -649,26 +649,26 @@ TEST_CASE("<List> implement isSorted member function",
     // sorted again
     l1.sort();
     CHECK( l1.isSorted() );
-  }  
-}
-*/
+   }
+   }
+ */
 
 
 /** Task 5: implement public/private search API
  */
 /*
-TEST_CASE("<List> implement public/private search member function",
+   TEST_CASE("<List> implement public/private search member function",
           "[task5searchAPIChanges]")
-{
-  SECTION("test base case search, search empty list should fail")
-  {
+   {
+   SECTION("test base case search, search empty list should fail")
+   {
     List l0; // empty list
     int result = l0.search("trinity");
     CHECK( result == NOT_FOUND );
-  }
+   }
 
-  SECTION("test some general cases on list of 20 values")
-  {
+   SECTION("test some general cases on list of 20 values")
+   {
     string l1Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"};
     List l1(20, l1Values);
 
@@ -680,7 +680,7 @@ TEST_CASE("<List> implement public/private search member function",
     // is list now sorted?
     CHECK( l1.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
 
-    
+
     // check bounds conditions
     result = l1.search("agent brown");
     CHECK( result == 0 );
@@ -702,7 +702,7 @@ TEST_CASE("<List> implement public/private search member function",
     // is found will depend on its position
     result = l1.search("neo");
     CHECK( result == 11 );
-    
+
     // test failing searches
     result = l1.search("ghost");
     CHECK( result == NOT_FOUND );
@@ -710,6 +710,6 @@ TEST_CASE("<List> implement public/private search member function",
     CHECK( result == NOT_FOUND );
     result = l1.search("noe");
     CHECK( result == NOT_FOUND );
-  }  
-}
-*/
+   }
+   }
+ */
