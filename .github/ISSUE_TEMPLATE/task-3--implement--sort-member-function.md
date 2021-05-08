@@ -9,15 +9,11 @@ assignees: ''
 
 **Description**
 
-Implement the described member function to sort the `List` of values.  This function
-is a `void` function and it takes no parameters as input.  Its sole purpose is to sort
-all of the current `values` of the list into ascending order.
+Implement the described member function to sort the `List` of values.  This function is a `void` function and it takes no parameters as input.  Its sole purpose is to sort all of the current `values` of the list into ascending order.
 
 **Suggested Solution**
 
-The merge sort algorithm is a recursive algorithm.  Your base case is that,
-if you are asked to sort a list of size 1 or an empty list of size 0 then
-the list is already trivially sorted, so simply return and do nothing.
+The merge sort algorithm is a recursive algorithm.  Your base case is that, if you are asked to sort a list of size 1 or an empty list of size 0 then the list is already trivially sorted, so simply return and do nothing.
 
 But if the list has 2 or more items you need to
 

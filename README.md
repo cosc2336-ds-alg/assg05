@@ -311,6 +311,7 @@ indicate a failed search.
 
 The recursive general case is another example of a divide-and-conquer approach.
 The algorithm is as follows:
+
 1. calculate the middle index of the remaining portion of the list, e.g.
    $\frac{begin + end}{2}$
 2. test the value at the middle index.  If it is what we are searching for, return
