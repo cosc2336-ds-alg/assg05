@@ -18,10 +18,8 @@
 #include <string>
 using namespace std;
 
-
 /// Define the flag that indicates a failed search of the list
 const int NOT_FOUND = -1;
-
 
 /** @class List
  * @brief A basic List of integer values for the assignment.
@@ -35,7 +33,6 @@ const int NOT_FOUND = -1;
 class List
 {
 private:
-
   /// @brief the current size of the list of integer values
   int size;
   /// @brief the string values contained in the list.  This will
@@ -61,7 +58,6 @@ public:
   // sorting and searching method declarations go here
 };
 
-
 /** @class ListMemoryBoundsException
  * @brief Memory Bounds Exception for the List class.
  *
@@ -81,4 +77,4 @@ private:
   string message;
 };
 
-#endif  // define _LIST_HPP_
+#endif // define _LIST_HPP_

@@ -13,12 +13,11 @@
  * of some of the data structures and abstract data types we
  * will be learning to build and understand.
  */
+#include "List.hpp"
 #include <iostream>
 #include <sstream>
 #include <string>
-#include "List.hpp"
 using namespace std;
-
 
 /** default constructor
  * Construct an empty list.  Probably not useful for this
@@ -48,7 +47,6 @@ List::List(int size)
   }
 }
 
-
 /** standard constructor
  * Construct a list of integer values from a (statically) defined and
  * provided array of integers.  We simply allocate a block of memory
@@ -73,7 +71,6 @@ List::List(int size, string values[])
     this->values[index] = values[index];
   }
 }
-
 
 /** copy constructor
  * Provide a copy constructor for the List class.  A copy constructor
@@ -101,7 +98,6 @@ List::List(const List& list)
   }
 }
 
-
 /** destructor
  * Destructor for the List class.  A List may (or may not) have
  * a dynamically allocated block of memory associated with it.
@@ -117,7 +113,6 @@ List::~List()
   }
 }
 
-
 /** size accessor
  * Accessor method to get the current size of this List of integers.
  *
@@ -127,7 +122,6 @@ int List::getSize() const
 {
   return size;
 }
-
 
 /** List to string
  * Accessor method to construct and return a string representation
@@ -141,8 +135,7 @@ string List::str() const
   ostringstream out;
 
   // stream list information into the output stream
-  out << "<list> size: " << size
-      << " [ ";
+  out << "<list> size: " << size << " [ ";
 
   // stream the current value sof the list to the output stream
   for (int index = 0; index < size; index++)
@@ -165,7 +158,6 @@ string List::str() const
   return out.str();
 }
 
-
 /** indexing operator
  * Provide a way to index individual values in our private
  * internal array of integers.  This allows code to, for the
@@ -186,11 +178,10 @@ string& List::operator[](int index)
 {
   // first check that the requsted index is legally
   // within the bounds of the current size of our list
-  if ( (index < 0) or (index >= size)  )
+  if ((index < 0) or (index >= size))
   {
     ostringstream out;
-    out << "Error: illegal bounds access, list size: " << size
-        << " tried to access index address: " << index;
+    out << "Error: illegal bounds access, list size: " << size << " tried to access index address: " << index;
 
     throw ListMemoryBoundsException(out.str());
   }
@@ -198,7 +189,6 @@ string& List::operator[](int index)
   // otherwise it is safe to return the reference to this value
   return values[index];
 }
-
 
 /** boolean equals operator
  * Check if this List is equal to the right hand side (rhs)
@@ -235,7 +225,6 @@ bool List::operator==(const List& rhs) const
   return true;
 }
 
-
 /** List output operator
  *@brief overload output stream operator for List type.
  *
@@ -260,7 +249,6 @@ ostream& operator<<(ostream& out, const List& rhs)
   return out;
 }
 
-
 /**
  * @brief ListMemoryBoundsException constructor
  *
@@ -274,17 +262,13 @@ ListMemoryBoundsException::ListMemoryBoundsException(const string& message)
   this->message = message;
 }
 
-
 /**
  * @brief ListMemoryBoundsException destructor
  *
  * Destructor for exceptions used for our ListMemoryBoundsException
  * class.
  */
-ListMemoryBoundsException::~ListMemoryBoundsException()
-{
-}
-
+ListMemoryBoundsException::~ListMemoryBoundsException() {}
 
 /**
  * @brief ListMemoryBoundsException message

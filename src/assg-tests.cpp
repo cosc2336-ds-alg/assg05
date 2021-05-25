@@ -16,17 +16,15 @@
  * the catch2 unit test framework to define the test cases and test
  * assertions.
  */
-#include <iostream>
-#include "catch.hpp"
 #include "List.hpp"
+#include "catch.hpp"
+#include <iostream>
 using namespace std;
-
 
 /** Tests of the List type you have been given to use for
  * this assignment.
  */
-TEST_CASE("<List> test of List user defined type for this assignment",
-          "[ListTests]")
+TEST_CASE("<List> test of List user defined type for this assignment", "[ListTests]")
 {
   // construct an empty list
   List l1;
@@ -127,7 +125,7 @@ TEST_CASE("<List> test of List user defined type for this assignment",
   CHECK_FALSE(l3 == l2);
 
   // test empty lists are equal
-  List l4;  // another empty list, like l1
+  List l4; // another empty list, like l1
   CHECK(l1 == l4);
   CHECK(l4 == l1);
 
@@ -160,7 +158,6 @@ TEST_CASE("<List> test of List user defined type for this assignment",
   CHECK_FALSE(l6 == l7);
   CHECK_FALSE(l7 == l6);
 }
-
 
 /** Task 1: implement a sublist copy constructor for the List class.
  */
@@ -243,7 +240,6 @@ TEST_CASE("<List> test of List user defined type for this assignment",
    CHECK_THROWS_AS( List(l1, 0, 5), ListMemoryBoundsException );
    }
  */
-
 
 /** Task 2: implement merge member function
  */
@@ -384,11 +380,13 @@ TEST_CASE("<List> test of List user defined type for this assignment",
 
     List r3(13);
     r3.merge(i3, i4);
-    CHECK( r3.str() == "<list> size: 13 [ agent brown, architect, cypher, keymaker, merovingian, morpheus, neo, oracle, persophene, tank, trinity, trinity, woman in red ]" );
+    CHECK( r3.str() == "<list> size: 13 [ agent brown, architect, cypher, keymaker, merovingian, morpheus, neo, oracle, persophene, tank,
+   trinity, trinity, woman in red ]" );
 
     List r4(24);
     r4.merge(r3, r1);
-    CHECK( r4.str() == "<list> size: 24 [ agent brown, agent smith, apoc, architect, cypher, cypher, dozer, dozer, dujour, keymaker, merovingian, morpheus, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, trinity, woman in red ]" );
+    CHECK( r4.str() == "<list> size: 24 [ agent brown, agent smith, apoc, architect, cypher, cypher, dozer, dozer, dujour, keymaker,
+   merovingian, morpheus, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, trinity, woman in red ]" );
    }
 
    // You need to make sure for now that the destination of the merge is large enough
@@ -411,11 +409,11 @@ TEST_CASE("<List> test of List user defined type for this assignment",
     // for now too big is fine, but undefined result can occur
     List r3(15); // just a bit too small
     r3.merge(i1, i2);
-    CHECK( r3.str() == "<list> size: 15 [ agent smith, apoc, cypher, dozer, dozer, dujour, morpheus, mouse, neo, spoon boy, switch, , , ,  ]" );
+    CHECK( r3.str() == "<list> size: 15 [ agent smith, apoc, cypher, dozer, dozer, dujour, morpheus, mouse, neo, spoon boy, switch, , , , ]"
+   );
    }
    }
  */
-
 
 /** Task 3: implement the recursive sort member function
  */
@@ -486,35 +484,35 @@ TEST_CASE("<List> test of List user defined type for this assignment",
     CHECK( l1.str() == "<list> size: 8 [ agent brown, architect, cypher, keymaker, merovingian, morpheus, persophene, trinity ]" );
 
     // bigger odd sized
-    string l2Values[] = {"oracle", "persophene", "trinity", "agent smith", "keymaker", "merovingian", "agent brown", "morpheus", "architect", "cypher", "neo"};
-    List l2(11, l2Values);
-    l2.sort();
-    CHECK( l2.str() == "<list> size: 11 [ agent brown, agent smith, architect, cypher, keymaker, merovingian, morpheus, neo, oracle, persophene, trinity ]" );
+    string l2Values[] = {"oracle", "persophene", "trinity", "agent smith", "keymaker", "merovingian", "agent brown", "morpheus",
+   "architect", "cypher", "neo"}; List l2(11, l2Values); l2.sort(); CHECK( l2.str() == "<list> size: 11 [ agent brown, agent smith,
+   architect, cypher, keymaker, merovingian, morpheus, neo, oracle, persophene, trinity ]" );
 
     // bigger reversed list even sized
-    string l3Values[] = { "woman in red", "trinity", "tank", "persophene", "oracle", "neo", "mouse", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "apoc", "agent smith", "agent brown"};
-    List l3(16, l3Values);
-    l3.sort();
-    CHECK( l3.str() == "<list> size: 16 [ agent brown, agent smith, apoc, architect, cypher, dujour, keymaker, merovingian, morpheus, mouse, neo, oracle, persophene, tank, trinity, woman in red ]" );
+    string l3Values[] = { "woman in red", "trinity", "tank", "persophene", "oracle", "neo", "mouse", "morpheus", "merovingian", "keymaker",
+   "dujour", "cypher", "architect", "apoc", "agent smith", "agent brown"}; List l3(16, l3Values); l3.sort(); CHECK( l3.str() == "<list>
+   size: 16 [ agent brown, agent smith, apoc, architect, cypher, dujour, keymaker, merovingian, morpheus, mouse, neo, oracle, persophene,
+   tank, trinity, woman in red ]" );
     // a bit bigger odd sized, with a few out of reverse order items and a duplicate
-    string l4Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"};
-    List l4(20, l4Values);
-    l4.sort();
-    CHECK( l4.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
+    string l4Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer",
+   "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"}; List l4(20,
+   l4Values); l4.sort(); CHECK( l4.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker,
+   merovingian, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
    }
 
    SECTION("test some more lists where we use List features")
    {
     // sort a list of values
-    string l4Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"};
-    List l4(20, l4Values);
-    l4.sort();
-    CHECK( l4.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
+    string l4Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer",
+   "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"}; List l4(20,
+   l4Values); l4.sort(); CHECK( l4.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker,
+   merovingian, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
 
     // copy the list and sort again, it should still be sorted
     List l5 = l4;
     l5.sort();
-    CHECK( l5.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
+    CHECK( l5.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus,
+   mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
 
     // lists should compare as equal
     CHECK( l4 == l5 );
@@ -523,16 +521,17 @@ TEST_CASE("<List> test of List user defined type for this assignment",
     l5[0] = "seraph";
     l5[19] = "kali";
     CHECK_FALSE( l4 == l5 );
-    CHECK( l5.str() == "<list> size: 20 [ seraph, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, kali ]" );
+    CHECK( l5.str() == "<list> size: 20 [ seraph, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus,
+   mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, kali ]" );
 
     // resort l5, still not equal to l4 but l5 now sorted
     l5.sort();
     CHECK_FALSE( l4 == l5 );
-    CHECK( l5.str() == "<list> size: 20 [ agent smith, apoc, architect, cypher, dozer, dujour, kali, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, seraph, spoon boy, switch, tank, trinity ]" );
+    CHECK( l5.str() == "<list> size: 20 [ agent smith, apoc, architect, cypher, dozer, dujour, kali, keymaker, merovingian, morpheus, mouse,
+   neo, neo, oracle, persophene, seraph, spoon boy, switch, tank, trinity ]" );
    }
    }
  */
-
 
 /** Task 4: implement the recursive search member function
  */
@@ -549,12 +548,14 @@ TEST_CASE("<List> test of List user defined type for this assignment",
 
    SECTION("test some general cases on list of 20 values")
    {
-    string l1Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"};
-    List l1(20, l1Values);
+    string l1Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer",
+   "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"}; List l1(20,
+   l1Values);
 
     // need to sort it before we can search
     l1.sort();
-    CHECK( l1.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
+    CHECK( l1.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus,
+   mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
 
     // best case scenario, item is at very middle index so search stops in 1 step
     int result = l1.search("morpheus", 0, 19);
@@ -598,7 +599,6 @@ TEST_CASE("<List> test of List user defined type for this assignment",
    }
  */
 
-
 /** Task 5: implement the isSorted() member function
  */
 /*
@@ -633,8 +633,9 @@ TEST_CASE("<List> test of List user defined type for this assignment",
    SECTION("test in general sorted detection")
    {
     // not sorted
-    string l1Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"};
-    List l1(20, l1Values);
+    string l1Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer",
+   "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"}; List l1(20,
+   l1Values);
 
     CHECK_FALSE( l1.isSorted() );
 
@@ -653,7 +654,6 @@ TEST_CASE("<List> test of List user defined type for this assignment",
    }
  */
 
-
 /** Task 5: implement public/private search API
  */
 /*
@@ -669,8 +669,9 @@ TEST_CASE("<List> test of List user defined type for this assignment",
 
    SECTION("test some general cases on list of 20 values")
    {
-    string l1Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer", "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"};
-    List l1(20, l1Values);
+    string l1Values[] = { "neo", "woman in red", "trinity", "tank", "persophene", "oracle", "spoon boy", "neo", "mouse", "dozer",
+   "morpheus", "merovingian", "keymaker", "dujour", "cypher", "architect", "switch", "apoc", "agent smith", "agent brown"}; List l1(20,
+   l1Values);
 
     // list is not sorted, but after first search it should have been sorted for us.
     // best case scenario, item is at very middle index so search stops in 1 step
@@ -678,7 +679,8 @@ TEST_CASE("<List> test of List user defined type for this assignment",
     CHECK( result == 9 );
 
     // is list now sorted?
-    CHECK( l1.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus, mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
+    CHECK( l1.str() == "<list> size: 20 [ agent brown, agent smith, apoc, architect, cypher, dozer, dujour, keymaker, merovingian, morpheus,
+   mouse, neo, neo, oracle, persophene, spoon boy, switch, tank, trinity, woman in red ]" );
 
 
     // check bounds conditions
