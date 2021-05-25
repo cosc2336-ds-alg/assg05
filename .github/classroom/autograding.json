@@ -8,22 +8,12 @@
       "output": "",
       "comparison": "included",
       "timeout": 10,
-      "points": 40
+      "points": 15
     },
     {
-      "name": "test ListTests",
+      "name": "test given List operations",
       "setup": "make",
-      "run": "./test --list-test-names-only [ListTests] | grep . && ./test [ListTests]",
-      "input": "",
-      "output": "",
-      "comparison": "included",
-      "timeout": 10,
-      "points": 0
-    },
-    {
-      "name": "test task1sublistCopyConstructor",
-      "setup": "make",
-      "run": "./test --list-test-names-only [task1sublistCopyConstructor] | grep . && ./test [task1sublistCopyConstructor]",
+      "run": "./test --list-test-names-only [task0] | grep . && ./test [task0]",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -31,9 +21,49 @@
       "points": 10
     },
     {
-      "name": "test task2mergeMemberFunction",
+      "name": "task 1 test sublist Copy Constructor",
       "setup": "make",
-      "run": "./test --list-test-names-only [task2mergeMemberFunction] | grep . && ./test [task2mergeMemberFunction]",
+      "run": "./test --list-test-names-only [task1] | grep . && ./test [task1]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "task 2 test merge() member function",
+      "setup": "make",
+      "run": "./test --list-test-names-only [task2] | grep . && ./test [task2]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "task 3 test sort() member function",
+      "setup": "make",
+      "run": "./test --list-test-names-only [task3] | grep . && ./test [taske]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "task 4 test search() member function",
+      "setup": "make",
+      "run": "./test --list-test-names-only [task4] | grep . && ./test [task4]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "task 5 test isSorted() member function",
+      "setup": "make",
+      "run": "./test --list-test-names-only [task5] | grep . && ./test [task5]",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -41,44 +71,14 @@
       "points": 10
     },
     {
-      "name": "test task3sortMemberFunction",
+      "name": "task 5 test search() API changes",
       "setup": "make",
-      "run": "./test --list-test-names-only [task3sortMemberFunction] | grep . && ./test [task3sortMemberFunction]",
+      "run": "./test --list-test-names-only [task5-2] | grep . && ./test [task5-2]",
       "input": "",
       "output": "",
       "comparison": "included",
       "timeout": 10,
-      "points": 10
-    },
-    {
-      "name": "test task4searchMemberFunction",
-      "setup": "make",
-      "run": "./test --list-test-names-only [task4searchMemberFunction] | grep . && ./test [task4searchMemberFunction]",
-      "input": "",
-      "output": "",
-      "comparison": "included",
-      "timeout": 10,
-      "points": 10
-    },
-    {
-      "name": "test task5isSortedMemberFunction",
-      "setup": "make",
-      "run": "./test --list-test-names-only [task5isSortedMemberFunction] | grep . && ./test [task5isSortedMemberFunction]",
-      "input": "",
-      "output": "",
-      "comparison": "included",
-      "timeout": 10,
-      "points": 10
-    },
-    {
-      "name": "test task5searchAPIChanges",
-      "setup": "make",
-      "run": "./test --list-test-names-only [task5searchAPIChanges] | grep . && ./test [task5searchAPIChanges]",
-      "input": "",
-      "output": "",
-      "comparison": "included",
-      "timeout": 10,
-      "points": 10
+      "points": 5
     }
   ]
 }

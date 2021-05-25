@@ -25,7 +25,7 @@ using namespace std;
 /** Tests of the List type you have been given to use for
  * this assignment.
  */
-TEST_CASE("<List> test of List user defined type for this assignment", "[ListTests]")
+TEST_CASE("<List> test of List user defined type for this assignment", "[task0]")
 {
   // construct an empty list
   List l1;
@@ -164,7 +164,7 @@ TEST_CASE("<List> test of List user defined type for this assignment", "[ListTes
  */
 /*
    TEST_CASE("<List constructor> test of new sublist copy constructor",
-          "[task1sublistCopyConstructor]")
+          "[task1]")
    {
    string values1[] = {"neo", "morpheus", "trinity", "cypher", "oracle"};
    List l1(5, values1);
@@ -246,7 +246,7 @@ TEST_CASE("<List> test of List user defined type for this assignment", "[ListTes
  */
 /*
    TEST_CASE("<List> implement merge member function",
-          "[task2mergeMemberFunction]")
+          "[task2]")
    {
    SECTION("test merge order lower, upper, lower, upper")
    {
@@ -420,7 +420,7 @@ TEST_CASE("<List> test of List user defined type for this assignment", "[ListTes
  */
 /*
    TEST_CASE("<List> implement sort member function",
-          "[task3sortMemberFunction]")
+          "[task3]")
    {
    SECTION("test base case sorts")
    {
@@ -538,7 +538,7 @@ TEST_CASE("<List> test of List user defined type for this assignment", "[ListTes
  */
 /*
    TEST_CASE("<List> implement search member function",
-          "[task4searchMemberFunction]")
+          "[task4]")
    {
    SECTION("test base case search, search empty list should fail")
    {
@@ -604,7 +604,7 @@ TEST_CASE("<List> test of List user defined type for this assignment", "[ListTes
  */
 /*
    TEST_CASE("<List> implement isSorted member function",
-          "[task5isSortedMemberFunction]")
+          "[task5]")
    {
    SECTION("test list of size 0 and 1")
    {
@@ -659,7 +659,7 @@ TEST_CASE("<List> test of List user defined type for this assignment", "[ListTes
  */
 /*
    TEST_CASE("<List> implement public/private search member function",
-          "[task5searchAPIChanges]")
+          "[task5-2]")
    {
    SECTION("test base case search, search empty list should fail")
    {
