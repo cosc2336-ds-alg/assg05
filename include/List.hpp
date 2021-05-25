@@ -31,13 +31,6 @@ const int NOT_FOUND = -1;
  */
 class List
 {
-private:
-  /// @brief the current size of the list of integer values
-  int size;
-  /// @brief the string values contained in the list.  This will
-  ///   be a dynamically allocated array of integers.
-  string* values;
-
 public:
   // constructors and destructors
   List(int size = 0);              // default constructor
@@ -55,6 +48,13 @@ public:
   friend ostream& operator<<(ostream& out, const List& rhs);
 
   // sorting and searching method declarations go here
+
+private:
+  /// @brief the current size of the list of integer values
+  int size;
+  /// @brief the string values contained in the list.  This will
+  ///   be a dynamically allocated array of integers.
+  string* values;
 };
 
 /** @class ListMemoryBoundsException

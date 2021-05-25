@@ -1,4 +1,5 @@
 /** @file main.cpp
+ *
  * @brief main/debug executable for Assignment Sorting and Searching:
  *   Recursive Sorting and Searching with Merge Sort and Binary Search
  *

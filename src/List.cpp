@@ -19,7 +19,8 @@
 #include <string>
 using namespace std;
 
-/** default constructor
+/** @brief Default constructor
+ *
  * Construct an empty list.  Probably not useful for this
  * assignment, but it is often required to have a default
  * constructor for various reasons by the C++ language.
@@ -47,7 +48,8 @@ List::List(int size)
   }
 }
 
-/** standard constructor
+/** @brief Standard constructor
+ *
  * Construct a list of integer values from a (statically) defined and
  * provided array of integers.  We simply allocate a block of memory
  * dynamically large enough to hold the values, then copy the values
@@ -72,7 +74,8 @@ List::List(int size, string values[])
   }
 }
 
-/** copy constructor
+/** @brief Copy constructor
+ *
  * Provide a copy constructor for the List class.  A copy constructor
  * will be invoked whenver you assign one instance of a List to another.
  * For example
@@ -98,7 +101,8 @@ List::List(const List& list)
   }
 }
 
-/** destructor
+/** @brief Class destructor
+ *
  * Destructor for the List class.  A List may (or may not) have
  * a dynamically allocated block of memory associated with it.
  * Free up this block on destruction of a List instance.
@@ -113,7 +117,8 @@ List::~List()
   }
 }
 
-/** size accessor
+/** @brief Size accessor
+ *
  * Accessor method to get the current size of this List of integers.
  *
  * @returns int Returns the current size of the list of integers.
@@ -123,7 +128,8 @@ int List::getSize() const
   return size;
 }
 
-/** List to string
+/** @brief List to string
+ *
  * Accessor method to construct and return a string representation
  * of the current values and status of this List instance.
  *
@@ -158,7 +164,8 @@ string List::str() const
   return out.str();
 }
 
-/** indexing operator
+/** @brief Indexing operator
+ *
  * Provide a way to index individual values in our private
  * internal array of integers.  This allows code to, for the
  * most part, treated an instance of our List as if it were
@@ -190,7 +197,7 @@ string& List::operator[](int index)
   return values[index];
 }
 
-/** boolean equals operator
+/** @brief Boolean equals operator
  * Check if this List is equal to the right hand side (rhs)
  * list.  The lists are equal if their sizes are equal, and if
  * all elements in both lists are equal.
@@ -225,8 +232,7 @@ bool List::operator==(const List& rhs) const
   return true;
 }
 
-/** List output operator
- *@brief overload output stream operator for List type.
+/** @brief List output operator
  *
  * Overload the output stream operator so that we can display current
  * values of a List on standard output.
@@ -249,11 +255,9 @@ ostream& operator<<(ostream& out, const List& rhs)
   return out;
 }
 
-/**
- * @brief ListMemoryBoundsException constructor
+/** @brief Memory bounds exception constructor
  *
- * Constructor for exceptions used for our
- * List  class.
+ * Constructor for exceptions used for our List class.
  *
  * @param message The exception message thrown when an error occurs.
  */
@@ -262,16 +266,14 @@ ListMemoryBoundsException::ListMemoryBoundsException(const string& message)
   this->message = message;
 }
 
-/**
- * @brief ListMemoryBoundsException destructor
+/** @brief Memory bounds exception destructor
  *
  * Destructor for exceptions used for our ListMemoryBoundsException
  * class.
  */
 ListMemoryBoundsException::~ListMemoryBoundsException() {}
 
-/**
- * @brief ListMemoryBoundsException message
+/** @brief Memory bounds exception message
  *
  * Accessor method to access/return message given when an exception occurs.
  *
