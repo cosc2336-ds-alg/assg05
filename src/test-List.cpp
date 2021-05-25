@@ -1,4 +1,4 @@
-/** @file assg-tests.cpp
+/** @file test-List.cpp
  * @brief Unit tests for Assignment Sorting and Searching:
  *   Recursive Sorting and Searching with Merge Sort and Binary Search.
  *

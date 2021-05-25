@@ -58,7 +58,7 @@ using and adding code to for this assignment.
 
 | File Name                    | Description                                                                                         |
 |------------------------------|-----------------------------------------------------------------------------------------------------|
-| `src/assg-tests.cpp`         | Unit tests for the sorting and searching member functions you are to implement.                     |
+| `src/test-List.cpp`          | Unit tests for the sorting and searching member functions you are to implement.                     |
 | `include/List.hpp`           | Header file for the declarations of the `List` class you will be modifying and its defined API.     |
 | `src/List.cpp`               | Implementation file for the `List` member functions that implement the API and class functionality. |
 
@@ -74,17 +74,14 @@ you have completed the following setup steps.
    current class semester and section.
 2. Clone the repository using the SSH url to your local class DevBox
    development environment.
-3. Checkout the 'origins/feedback' branch to your locak working DevBox
-   repository.
-4. Configure the project by running the `configure` script from a terminal.
-5. Confirm that the project builds and runs, though no tests will be
+3. Configure the project by running the `configure` script from a terminal.
+4. Confirm that the project builds and runs, though no tests will be
    defined or run initially.  If the project does not build on the first
    checkout, please inform the instructor.
-6. You should create the issue for Task 1 and/or for all tasks for the assignment
+5. You should create the issue for Task 1 and/or for all tasks for the assignment
    now before beginning the first task.  On your GitHub account, go to issues,
-   and create it/them from the issue templates for the assignment.  Also you
-   should close the initial Pull request that should be automatically
-   opened for you, so that you can open your own when commiting your work.
+   and create it/them from the issue templates for the assignment. Also make sure
+   you link the issues with the `Feedback` pull request.
 
 
 # Assignment Tasks
@@ -118,8 +115,8 @@ use them to recursively sort the original `List`.
 
 ## Task 1: Implement Sub List Copy Constructor
 
-If you haven't already, create the Task 1 issue on GitHub and close
-the initial Pull request if it is still open.
+If you haven't already, create the Task 1 issue on GitHub and
+link this issue with the `Feedback` pull request.
 
 We first need a way to easily make a copy of a portion of an existing
 list, so that we can first divide a list (the divide part of
@@ -149,14 +146,12 @@ and run, but the new tests you uncommented will not be passing.
 Once you have the project compiling and running the tests again,
 implement the sublist copy constructor as described.  When you are
 able to pass the tests and are satisfied with your work, commit your
-changes and push them to your repository using the `feedback` branch.
-Then document this task completion with a pull request and merge the
-changes to the main branch.
+changes and push them to your repository  `Feedback` pull request.
 
 ## Task 2: Implement `merge()` Member Function
 
-Make sure you have created Issue 2 for this task.  And it would be best to close
-and merge your first pull request before continuing on to Task 2.
+Make sure you have created Issue 2 for this task and linked
+it with the `Feedback` pull request.
 
 For the second task, you need to add a `merge()` member function
 to your `List` class.  This is a special case of merging lists, and
@@ -212,16 +207,14 @@ so the stub can be empty.  Make sure your code compiles and runs the tests
 with the new set of tests uncommented before trying to begin your
 implementation.
 
-Once you have implemented your `merge()` member function and it is passing the
-given tests, do the usual.  Commit your changes and push them to the
-`feedback` branch of your repository.  Then close out your Task #2 and the
-pull request to document the completion of this task.
+Once you have implemented your `merge()` member function and it is
+passing the given tests, do the usual.  Commit your changes and push
+them to the `Feedback` pull request of your GitHub repository.
 
 ## Task 3: Implement the `sort()` Member Function using Merge Sort
 
 Make sure you have done the usual to commit and document the previous
-task in your repository and you have created Task 3 and are ready for
-a new pull request to begin.
+task in your repository and you have created the issue for Task 3.
 
 With your sublist copy constructor and the sorted `merge()` member function,
 the implementation of a `sort()` member function is relatively
@@ -271,11 +264,11 @@ But if the list has 2 or more items you need to
 3. Call `merge()` on this instance with the returned, now sorted, `lower` and `upper`
    list copies.
    
-And that is it.  If you implement that correctly, your lists should end up being sorted
-in place, and you will be able to pass the tests in the next set of unit tests.
-Once you are satisfied with your implementation, commit your work and push it to the
-`feedback` branch of your repository.  Then document the completion of this task
-with a pull request.
+And that is it.  If you implement that correctly, your lists should
+end up being sorted in place, and you will be able to pass the tests
+in the next set of unit tests.  Once you are satisfied with your
+implementation, commit your work and push it to the `Feedback` pull
+request of your repository.
 
 
 ## Task 4: Implement `search()` Member Functions using Recursive Binary Search
@@ -325,7 +318,7 @@ The algorithm is as follows:
 	 
 Once you are satisfied with your implementation of `search()` and it
 is passing the tests, perform the usual steps to commit and push your
-work and document it with a pull request.
+work document to the `Feedback` pull request.
 
 
 ## Task 5: Implement `isSorted()` Member Function and Improve `search()` API
@@ -375,8 +368,10 @@ a `bool` result as we described and it has no parameters as input.  This
 member should be a `const` member function, because it is returning information
 only, it does not modify the `List` when called.
 
-Implement this method and get it to pass the next set of unit tests after uncommenting
-them in the test file.
+Implement this method and get it to pass the next set of unit tests
+after uncommenting them in the test file.  When you commit and push
+this work to the `Feedback` pull request, check that you are
+successfully passing all of the GitHub autograding actions.
 
 
 # Assignment Submission
@@ -392,10 +387,10 @@ building and able to run the tests.  You may loose points for pushing
 a broken build, especially if the last build you submit is not
 properly compiling and running the tests.
 
-In this problem, up to 40 points will be given for having at least 1
+In this problem, up to 25 points will be given for having at least 1
 commit that compiles and runs the tests (and at least some attempt was
-made to work on the first task).  Thereafter 10 points are awarded for
-completing each of the 6 tasks.  However you should note that the
+made to work on the first task).  Thereafter 15 points are awarded for
+completing each of the 5 tasks.  However you should note that the
 autograder awards either all point for passing all tests, or no points
 if any test is failing for one of the tasks.  Also note that even if
 you pass all tests, when the instructor evaluates your assignment,

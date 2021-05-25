@@ -2,7 +2,6 @@
  * @brief Declarations of List class for Assignment Searching and Sorting
  *
  * @author Jane Programmer
- * @note   cwid : 123 45 678
  * @note   class: COSC 2336, Summer 2021
  * @note   ide  : VSCode Server 3.9.3, Gnu Development Tools
  * @note   assg : Assignment Sorting and Searching
