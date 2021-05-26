@@ -4,15 +4,16 @@ author: 'COSC 2336: Data Structures and Algorithms'
 date: 'Summer 2021'
 ---
 
+\newcommand{\BigO}[1]{$\mathcal{O}(#1)$}
 
 # Objectives
 - More practice with classes and arrays in C++.
 - Practice writing member functions of C++ classes.
 - More examples of and practice with writing recursive functions.
   - Specifically divide-and-conquer recursive algorithms.
-- Explore $\mathcal{O}(n \log n)$ sorting algorithms by implementing
+- Explore \BigO{n \log n} sorting algorithms by implementing
   the recursive merge sort.
-- Explore $\mathcal{O}(\log_ n)$ searching using a recursive
+- Explore \BigO{\log_ n} searching using a recursive
   Binary Search implementation.
 
 # Description
@@ -20,26 +21,26 @@ date: 'Summer 2021'
 In this assignment the primary goal is to learn more about how sorting
 and searching algorithms work.  We will be implementing merge sort,
 which is an interesting sorting algorithm that has 
-$\mathcal{O}(n \log n)$ performance and is implemented most naturally
+\BigO{n \log n} performance and is implemented most naturally
 using a recursive algorithm.  As you should have learned in this
 unit, naive sorting algorithms, like Bubble Sort, have average and
-worst case performance of $\mathcal{O}(n^2)$, which is not very
+worst case performance of \BigO{n^2}, which is not very
 good.  The worst and average case performance of merge sort is
-$\mathcal{O}(n \log n)$ which is better, though
+\BigO{n \log n} which is better, though
 merge sort will required $2 n$ space, which means it needs to
 make a copy of the values to perform the sorting, thus doubling
 the amount of in core memory needed to perform the sort.
 
-In addition to implementing a $\mathcal{O}(n \log n)$ sort, we will
+In addition to implementing a \BigO{n \log n} sort, we will
 take advantage of the fact that we can sort a list of values to also
-implement a $\mathcal{O}(\log_2 n)$ binary search.  We looked at an
+implement a \BigO{\log_2 n} binary search.  We looked at an
 iterativeversion of the binary search in our textbook readings and
 lecture videos for this unit.  Binary search can easily be implemented
 as a recursive algorithm, and is also an example of divide-and-conquer
 recursion.  As was covered in this unit, binary search only works on a
 list of items that is already sorted.  But if the list is presorted,
 we can take advantage of this fact to search the least very rapidly,
-in $\mathcal{O}(\log_2 n)$ time.
+in \BigO{\log_2 n} time.
 
 This week you will be returning back to working with and implementing
 member functions of a class.  We will be (re)using the `List` class
@@ -222,9 +223,9 @@ simple.  We gave the general algorithm at the beginning of the tasks above.
 
 You need to split the current list into two sublists of as equal as possible
 number of values.  The dividing in half is what makes the merge sort a
-$\mathcal{O}(n \log n)$ algorithm.  If you always divided the list into
+\BigO{n \log n} algorithm.  If you always divided the list into
 two parts where one was of size 1 and the other was the rest of the list, then
-merge sort devolves into something similar to bubble sort, a $\mathcal{O}(n^2)$
+merge sort devolves into something similar to bubble sort, a \BigO{n^2}
 algorithm.
 
 If the size of `this` instance is even, then you can divide the list exactly
