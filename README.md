@@ -366,12 +366,28 @@ and don't find any out of order then the list is sorted.
 Add in the described member method named `isSorted()`.  This method returns
 a `bool` result as we described and it has no parameters as input.  This
 member should be a `const` member function, because it is returning information
-only, it does not modify the `List` when called.
+only, it does not modify the `List` when called.  We have split task
+5 into two sets uf test cases.  The first Task 5
+test case exclusively tests the implementation of the `isSorted()`
+method.  You should only uncomment this test case and first get the
+`isSorted()` method working.
+
+When `isSorted()` works, add a new overloaded `search()` API method
+call as described above.  This method simply takes a `string` to search
+for in the list, and it returns the index where the value is found in
+the list.  This method should first check if the list is sorted using
+the `isSorted()` method, and if not it will first call `sort()` 
+itself to make sure the list becomes sorted before doing the search.
+After checking and sorting the list if needed, simply call the
+existing `search()` implementation on the whole list to perform
+the search for the asked for `string`.  The second test case for task 5
+tests this new API implementation of the `search()` method.
 
 Implement this method and get it to pass the next set of unit tests
 after uncommenting them in the test file.  When you commit and push
 this work to the `Feedback` pull request, check that you are
-successfully passing all of the GitHub autograding actions.
+successfully passing all of the GitHub autograding actions as this
+is the last task for this assignment.
 
 
 # Assignment Submission
