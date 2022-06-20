@@ -168,7 +168,7 @@ string List::str() const
  *
  * Provide a way to index individual values in our private
  * internal array of integers.  This allows code to, for the
- * most part, treated an instance of our List as if it were
+ * most part, treat an instance of our List as if it were
  * an array, though we also provide bounds checking to ensure
  * no illegal access beyond the list bounds is attempted.
  *
@@ -182,6 +182,44 @@ string List::str() const
  *   the end of the array (or less than 0) is made.
  */
 string& List::operator[](int index)
+{
+  // first check that the requsted index is legally
+  // within the bounds of the current size of our list
+  if ((index < 0) or (index >= size))
+  {
+    ostringstream out;
+    out << "Error: illegal bounds access, list size: " << size << " tried to access index address: " << index;
+
+    throw ListMemoryBoundsException(out.str());
+  }
+
+  // otherwise it is safe to return the reference to this value
+  return values[index];
+}
+
+/** @brief Indexing operator (const return by value)
+ *
+ * Provide a way to index individual values in our private
+ * internal array of integers.  This allows code to, for the
+ * most part, treat an instance of our List as if it were
+ * an array, though we also provide bounds checking to ensure
+ * no illegal access beyond the list bounds is attempted.
+ *
+ * Provide a const member function version that returns a
+ * copy of the value.  Can be used in functions on right hand
+ * side, so we can pass in a List as a const List& (a
+ * constant reference parameter).
+ *
+ * @param index The index of the value it is desired to access from
+ *   this List.
+ *
+ * @returns int Returns a copy of the value to the requested List item at
+ *   the requested index.
+ *
+ * @throws ListMemoryBoundsException if a request for an index beyond
+ *   the end of the array (or less than 0) is made.
+ */
+string List::operator[](int index) const
 {
   // first check that the requsted index is legally
   // within the bounds of the current size of our list

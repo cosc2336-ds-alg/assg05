@@ -44,6 +44,7 @@ public:
 
   // overloaded operators
   string& operator[](int index);
+  string operator[](int index) const;
   bool operator==(const List& rhs) const;
   friend ostream& operator<<(ostream& out, const List& rhs);
 
