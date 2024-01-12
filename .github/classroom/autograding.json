@@ -28,7 +28,7 @@
       "output": "",
       "comparison": "included",
       "timeout": 10,
-      "points": 15
+      "points": 25
     },
     {
       "name": "task 2 test merge() member function",
@@ -38,7 +38,7 @@
       "output": "",
       "comparison": "included",
       "timeout": 10,
-      "points": 15
+      "points": 10
     },
     {
       "name": "task 3 test sort() member function",
@@ -48,7 +48,7 @@
       "output": "",
       "comparison": "included",
       "timeout": 10,
-      "points": 15
+      "points": 10
     },
     {
       "name": "task 4 test search() member function",
@@ -58,7 +58,7 @@
       "output": "",
       "comparison": "included",
       "timeout": 10,
-      "points": 15
+      "points": 10
     },
     {
       "name": "task 5 test isSorted() member function",
@@ -71,14 +71,14 @@
       "points": 10
     },
     {
-      "name": "task 5 test search() API changes",
+      "name": "task 6 test search() API changes",
       "setup": "make",
       "run": "./test --list-test-names-only [task5-2] | grep . && ./test [task5-2]",
       "input": "",
       "output": "",
       "comparison": "included",
       "timeout": 10,
-      "points": 5
+      "points": 10
     }
   ]
 }

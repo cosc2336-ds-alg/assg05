@@ -1,7 +1,7 @@
 ---
 title: 'Assignment Sorting and Searching: Recursive Sorting and Searching with Merge Sort and Binary Search'
 author: 'COSC 2336: Data Structures and Algorithms'
-date: 'Summer 2021'
+date: 'Spring 2024'
 ---
 
 \newcommand{\BigO}[1]{$\mathcal{O}(#1)$}
@@ -34,7 +34,7 @@ the amount of in core memory needed to perform the sort.
 In addition to implementing a \BigO{n \log n} sort, we will
 take advantage of the fact that we can sort a list of values to also
 implement a \BigO{\log_2 n} binary search.  We looked at an
-iterativeversion of the binary search in our textbook readings and
+iterative version of the binary search in our textbook readings and
 lecture videos for this unit.  Binary search can easily be implemented
 as a recursive algorithm, and is also an example of divide-and-conquer
 recursion.  As was covered in this unit, binary search only works on a
@@ -59,7 +59,7 @@ using and adding code to for this assignment.
 
 | File Name                    | Description                                                                                         |
 |------------------------------|-----------------------------------------------------------------------------------------------------|
-| `src/test-List.cpp`          | Unit tests for the sorting and searching member functions you are to implement.                     |
+| `src/assg05-tests.cpp`          | Unit tests for the sorting and searching member functions you are to implement.                     |
 | `include/List.hpp`           | Header file for the declarations of the `List` class you will be modifying and its defined API.     |
 | `src/List.cpp`               | Implementation file for the `List` member functions that implement the API and class functionality. |
 
@@ -74,15 +74,15 @@ you have completed the following setup steps.
    assignment invitation link for 'Assignment Recursion' for our
    current class semester and section.
 2. Clone the repository using the SSH url to your local class DevBox
-   development environment.
-3. Configure the project by running the `configure` script from a terminal.
-4. Confirm that the project builds and runs, though no tests will be
-   defined or run initially.  If the project does not build on the first
-   checkout, please inform the instructor.
-5. You should create the issue for Task 1 and/or for all tasks for the assignment
+   development environment. Make sure to open the cloned
+   folder and restart inside of the correct Dev Container.
+3. You should create the issue for Task 1 and/or for all tasks for the assignment
    now before beginning the first task.  On your GitHub account, go to issues,
    and create it/them from the issue templates for the assignment. Also make sure
    you link the issues with the `Feedback` pull request.
+4. Confirm that the project builds and runs, though no tests will be
+   defined or run initially.  If the project does not build on the first
+   checkout, please inform the instructor.
 
 
 # Assignment Tasks
@@ -368,7 +368,7 @@ Add in the described member method named `isSorted()`.  This method returns
 a `bool` result as we described and it has no parameters as input.  This
 member should be a `const` member function, because it is returning information
 only, it does not modify the `List` when called.  We have split task
-5 into two sets uf test cases.  The first Task 5
+5 into two sets of test cases.  The first Task 5
 test case exclusively tests the implementation of the `isSorted()`
 method.  You should only uncomment this test case and first get the
 `isSorted()` method working.
