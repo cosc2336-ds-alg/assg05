@@ -22,6 +22,12 @@
 #include <iostream>
 using namespace std;
 
+#undef task1
+#undef task2
+#undef task3
+#undef task4
+#undef task5
+
 /** Tests of the List type you have been given to use for
  * this assignment.
  */
@@ -162,7 +168,7 @@ TEST_CASE("<List> test of List user defined type for this assignment", "[task0]"
 
 /** Task 1: implement a sublist copy constructor for the List class.
  */
-/*
+#ifdef task1
 TEST_CASE("<List constructor> test of new sublist copy constructor", "[task1]")
 {
   string values1[] = {"neo", "morpheus", "trinity", "cypher", "oracle"};
@@ -238,11 +244,11 @@ TEST_CASE("<List constructor> test of new sublist copy constructor", "[task1]")
   CHECK_THROWS_AS(List(l1, 0, -1), ListMemoryBoundsException);
   CHECK_THROWS_AS(List(l1, 0, 5), ListMemoryBoundsException);
 }
-*/
+#endif
 
 /** Task 2: implement merge member function
  */
-/*
+#ifdef task2
 TEST_CASE("<List> implement merge member function", "[task2]")
 {
   SECTION("test merge order lower, upper, lower, upper")
@@ -414,11 +420,11 @@ TEST_CASE("<List> implement merge member function", "[task2]")
                       "dujour, morpheus, mouse, neo, spoon boy, switch, , , ,  ]");
   }
 }
-*/
+#endif
 
 /** Task 3: implement the recursive sort member function
  */
-/*
+#ifdef task3
 TEST_CASE("<List> implement sort member function", "[task3]")
 {
   SECTION("test base case sorts")
@@ -552,11 +558,11 @@ TEST_CASE("<List> implement sort member function", "[task3]")
                       "tank, trinity ]");
   }
 }
-*/
+#endif
 
 /** Task 4: implement the recursive search member function
  */
-/*
+#ifdef task4
 TEST_CASE("<List> implement search member function", "[task4]")
 {
 
@@ -621,11 +627,11 @@ TEST_CASE("<List> implement search member function", "[task4]")
     CHECK(result == NOT_FOUND);
   }
 }
-*/
+#endif
 
 /** Task 5: implement the isSorted() member function
  */
-/*
+#ifdef task5
 TEST_CASE("<List> implement isSorted member function", "[task5]")
 {
   SECTION("test list of size 0 and 1")
@@ -675,11 +681,11 @@ TEST_CASE("<List> implement isSorted member function", "[task5]")
     CHECK(l1.isSorted());
   }
 }
-*/
+#endif
 
 /** Task 5: implement public/private search API
  */
-/*
+#ifdef task5
 TEST_CASE("<List> implement public/private search member function", "[task5-2]")
 {
   SECTION("test base case search, search empty list should fail")
@@ -737,4 +743,4 @@ TEST_CASE("<List> implement public/private search member function", "[task5-2]")
     CHECK(result == NOT_FOUND);
   }
 }
-*/
+#endif
