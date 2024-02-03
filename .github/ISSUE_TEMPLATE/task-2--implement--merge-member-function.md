@@ -9,7 +9,7 @@ assignees: ''
 
 **Description**
 
-Implement the described member function to merge two given sorted lists back into the this `List` instance.  The two lists that are passed in as parameters should be passed in as `const` referenc eparameters.  This function is a `void` function because it doesn't return an explicit result.  Instead, the result of calling this function is that the two sublists are merged together and overwrite the original contents of this `List` instance.
+Implement the described member function to merge two given sorted lists back into the this `List` instance.  The two lists that are passed in as parameters should be passed in as `const` reference parameters.  This function is a `void` function because it doesn't return an explicit result.  Instead, the result of calling this function is that the two sublists are merged together and overwrite the original contents of this `List` instance.
 
 You do not need to error check for now if the lists are indeed sorted or not before attempting the merge.  But if they are not sorted, the resulting merge will not end up being sorted correctly either.
 

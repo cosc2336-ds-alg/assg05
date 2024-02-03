@@ -11,8 +11,6 @@ assignees: ''
 
 Implement a new copy constructor for the `List` class.  The class already contains a copy constructor that will create a whole copy of an existing list to make a new one. The sub list copy constructor takes a range of indexes `begin` and `end` that define a sublist of the values that are to be copied into the newly constructed list.
 
-
-
 **Suggested Solution**
 
 The existing copy constructor that copies the whole list is a good place to start.  You need only modify it to copy the values from the begin to the end index, instead of copying the whole list of values.  Of course before that, you need to calculate the correct size for the new list that is being created, and dynamically allocate only enough memory to hold this sublist size of values.

@@ -60,7 +60,7 @@ List::List(int size)
  * @param values The (static) array of string values to use to construct
  *   this List values with.
  */
-List::List(int size, string values[])
+List::List(int size, const string values[])
 {
   // dynamically allocate a block of memory on the heap large enough to copy
   // the given input values into

@@ -39,7 +39,7 @@ lecture videos for this unit.  Binary search can easily be implemented
 as a recursive algorithm, and is also an example of divide-and-conquer
 recursion.  As was covered in this unit, binary search only works on a
 list of items that is already sorted.  But if the list is presorted,
-we can take advantage of this fact to search the least very rapidly,
+we can take advantage of this fact to search the list very rapidly,
 in \BigO{\log_2 n} time.
 
 This week you will be returning back to working with and implementing
@@ -125,15 +125,49 @@ divide-and-conquer), before we sort recursively and merge back
 together.  The `List` data type already has a copy constructor defined
 that we used in the previous assignment with this `List` type.  You
 are going to add yet another constructor to our `List` data type, but
-one which will make a new list that is a copy of a portion of another
-list.  So for this task, you need to add a new `List` constructor that
-is the same as the copy constructor, but add in two additional
-parameters, a `begin` index and an `end` index (both integers).  These
-will indicate the portion of the passed in list that should be copied
-into the newly created list.  Your implementation of the copy
-constructor will then be similar to the existing one, but you should
-only allocate enough memory to hold the values that will be copied,
-and then only copy over the indicated values.
+one which will make a new list that is a copy of a **portion** of
+another list (a sublist).  So for this task, you need to add a new
+`List` constructor that is the same as the copy constructor, but add
+in two additional parameters, a `begin` index and an `end` index (both
+integers).  These will indicate the portion of the passed in list that
+should be copied into the newly created list.  Your implementation of
+the copy constructor will then be similar to the existing one, but you
+should only allocate enough memory to hold the values that will be
+copied, and then only copy over the indicated values.
+
+Notice from the tests that, for example, if we copy a
+sublist from begin index 0 to end index 2, the resulting
+size of the list will be 3.  So the size is a function
+of $begin - end + 1$.  We include the beginning index, and
+take values up to and including the end index.  So for example,
+given the list of values in a list: 
+
+```
+values = {"neo", "morpheus", "trinity", "cypher", "oracle"}
+```
+
+This list is a list of size 5, with valid indexes from 0 to 4.
+If we ask to create a sublist from 0 to 2, the resulting
+list will be size 3, and will contain the values:
+
+```
+values = {"neo", "morpheus", "trinity"}
+```
+
+There is one additional requirement for Task 1 that you can work
+on once you get the basics working.  We are adding in
+that we need to do some error checking, and throw exceptions when
+error conditions are detected in our assignments.  In this function,
+if an illegal `begin` or `end` position is specified we need to
+throw a `ListMemoryBoundsException`.  You can look at the
+existing `operator[]` in the `List` function for an example of
+throwing this exception in C++.  In your sublist constructor,
+you should thrown this excption if ever asked for a sublist
+that begins or ends at a value that is less than 0.  Also if
+asked to begin or end at a value greater than the last valid index.
+For example, for our list with 5 values, valid indexes range
+from 0 to 4.  So any request for a begin or end at 5 or larger
+position should generate the noted exception.
 
 It is suggested you perform the usual activities before trying to
 implement this task in earnest.  The first test case in the testing
@@ -201,6 +235,12 @@ the index into the two input arrays and the destination array.  And
 you need to handle copying the remaining values after this from one of
 the arrays onto the end of the destination.
 
+Also, as with task 1, we do need to check for and throw a
+`ListMemoryBoundsException` for error conditions in the `merge()`
+method.  In this case, if the combined sizes of the lower and 
+upper lists are two big for the current size of this list, then
+an exception should be thrown.
+
 Do the usual before you begin a task.  Uncomment the next test case in
 the testing file, and create a stub function and declare the member
 function signature in the header file.  The merge function is a `void` function
@@ -217,7 +257,7 @@ them to the `Feedback` pull request of your GitHub repository.
 Make sure you have done the usual to commit and document the previous
 task in your repository and you have created the issue for Task 3.
 
-With your sublist copy constructor and the sorted `merge()` member function,
+With your sublist copy constructor and the `merge()` of sorted lists member function,
 the implementation of a `sort()` member function is relatively
 simple.  We gave the general algorithm at the beginning of the tasks above.
 
@@ -370,8 +410,8 @@ member should be a `const` member function, because it is returning information
 only, it does not modify the `List` when called.  We have split task
 5 into two sets of test cases.  The first Task 5
 test case exclusively tests the implementation of the `isSorted()`
-method.  You should only uncomment this test case and first get the
-`isSorted()` method working.
+method.  You should first implement the `isSorted()` method and get the
+first test case for unit 5 to pass before proceeding.
 
 When `isSorted()` works, add a new overloaded `search()` API method
 call as described above.  This method simply takes a `string` to search
